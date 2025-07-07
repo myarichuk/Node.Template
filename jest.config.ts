@@ -8,7 +8,7 @@ const config: Config = {
     '^.+\\.tsx?$': [
       'ts-jest',
       {
-        tsconfig: 'tsconfig.tests.json',
+        tsconfig: 'tests/tsconfig.json',
         useESM: true,
       },
     ],
