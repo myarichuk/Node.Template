@@ -4,6 +4,7 @@
 
 - [Node.js](https://nodejs.org/) >= 22
 - [pnpm](https://pnpm.io/) >= 10
+- Use `nvm use` to switch to the Node.js version from `.nvmrc`
 
 ## Available Scripts
 
