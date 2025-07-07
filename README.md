@@ -26,9 +26,6 @@
    ```
 3. Commit the changes and start coding.
 
-=======
-A minimal TypeScript template.
-
 ## Release workflow
 
 1. Ensure all commits follow Conventional Commits.
