@@ -1,16 +1,6 @@
 name: CI
 
 on:
-  push:
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.json'
-      - '**/*.yml'
-      - '**/*.yaml'
-      - '**/*.toml'
-      - '**/*.cfg'
-      - '**/*.conf'
-      - '**/*.config'
   pull_request:
     paths-ignore:
       - '**/*.md'
