@@ -16,15 +16,19 @@
 
 ## Creating a New Project
 
-1. Clone this repository and install dependencies:
+1. Clone this repository and verify `pnpm` is available:
+   ```bash
+   node scripts/check-pnpm.mjs
+   ```
+2. Install dependencies:
    ```bash
    pnpm install
    ```
-2. Run the customize script with your project name:
+3. Run the customize script with your project name:
    ```bash
    pnpm run customize my-new-app
    ```
-3. Commit the changes and start coding.
+4. Commit the changes and start coding.
 
 ## Release workflow
 

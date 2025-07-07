@@ -12,7 +12,8 @@
     "prepare": "husky install",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "format": "prettier --write .",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "preinstall": "node ./scripts/check-pnpm.mjs"
   },
   "repository": {
     "type": "git",
