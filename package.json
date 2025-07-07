@@ -9,7 +9,7 @@
     "test": "jest",
     "customize": "node scripts/customize.mjs",
     "release": "standard-version",
-    "prepare": "husky install",
+    "prepare": "husky",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "format": "prettier --write .",
     "build": "tsc -p tsconfig.json",
