@@ -28,7 +28,9 @@ const ideaDir = path.resolve('.idea');
 if (fs.existsSync(ideaDir)) {
   const modulesXml = path.join(ideaDir, 'modules.xml');
   if (fs.existsSync(modulesXml)) {
-    const xml = fs.readFileSync(modulesXml, 'utf8').replace(/Node\.Template/g, newName);
+    const xml = fs
+      .readFileSync(modulesXml, 'utf8')
+      .replace(/Node\.Template/g, newName);
     fs.writeFileSync(modulesXml, xml);
   }
 
