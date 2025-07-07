@@ -5,7 +5,11 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "start": "tsx src/index.ts"
+    "start": "tsx src/index.ts",
+    "build": "tsc",
+    "lint": "tsc --noEmit",
+    "test": "tsx tests/index.test.ts",
+    "customize": "node scripts/customize.mjs"
   },
   "repository": {
     "type": "git",
