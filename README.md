@@ -1,5 +1,5 @@
 # Node.Template
-
+A simple template for a quick and convenient jumpstart of your project.
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) >= 22
