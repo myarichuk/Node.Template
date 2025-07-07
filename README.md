@@ -4,6 +4,7 @@
 
 - [Node.js](https://nodejs.org/) >= 22
 - [pnpm](https://pnpm.io/) >= 10
+- Project uses ES modules (`type: module`)
 
 ## Available Scripts
 
