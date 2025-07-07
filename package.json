@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "start": "tsx src/index.ts",
+    "test": "tsx tests/index.test.ts",
+    "customize": "node scripts/customize.mjs"
     "release": "standard-version",
     "prepare": "husky install",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "format": "prettier --write .",
     "build": "tsc -p tsconfig.json",
-    "test": "jest"
   },
   "repository": {
     "type": "git",
