@@ -16,7 +16,9 @@ A simple template for a quick and convenient jumpstart of your project.
 - `pnpm build` - compile TypeScript sources to `dist`
 - `pnpm lint` - type-check the project
 - `pnpm test` - run the example test suite
-- `pnpm customize <name>` - replace template placeholders with `<name>`
+- `pnpm customize <name> [owner]` - replace template placeholders with `<name>`.
+  If `owner` is provided, the `LICENSE` header will be updated with the
+  specified copyright holder. The year is automatically set to the current one.
 
 ## Creating a New Project
 
@@ -28,9 +30,9 @@ A simple template for a quick and convenient jumpstart of your project.
    ```bash
    pnpm install
    ```
-3. Run the customize script with your project name:
+3. Run the customize script with your project name and optional owner:
    ```bash
-   pnpm run customize my-new-app
+   pnpm run customize my-new-app "Jane Doe"
    ```
 4. Commit the changes and start coding.
 
