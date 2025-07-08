@@ -25,6 +25,7 @@ A starter template for quickly bootstrapping a Node.js project.
 - `pnpm dev` - start development mode with automatic reload
 - `pnpm start` - run the compiled application
 - `pnpm build` - compile TypeScript sources to `dist`
+- `pnpm build:sea` - compile sources and produce a Single Executable Application (SEA)
 - `pnpm lint` - run ESLint
 - `pnpm test` - run the test suite
 - `pnpm format` - format files with Prettier
