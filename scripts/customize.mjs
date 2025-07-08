@@ -2,7 +2,7 @@
 /**
  * Script used to customise this template after cloning.
  *
- * Usage: `pnpm run customize <new-project-name> [owner]`
+ * Usage: `pnpm run customize <new-project-name> [owner] [type]`
  *
  * It updates the project metadata (package.json, LICENSE, README and
  * IntelliJ IDEA configuration) so that the template is ready to use
@@ -13,8 +13,13 @@ import path from 'path';
 
 const newName = process.argv[2];
 const newOwner = process.argv[3] ?? newName;
+const projectType = process.argv[4] ?? 'api';
+if (!['api', 'website'].includes(projectType)) {
+  console.error('Type must be "api" or "website"');
+  process.exit(1);
+}
 if (!newName) {
-  console.error('Usage: pnpm run customize <new-project-name> [owner]');
+  console.error('Usage: pnpm run customize <new-project-name> [owner] [type]');
   process.exit(1);
 }
 
@@ -64,3 +69,19 @@ if (fs.existsSync(ideaDir)) {
     fs.renameSync(imlOld, imlNew);
   }
 }
+
+// Generate example source depending on chosen type
+const indexPath = path.resolve('src', 'index.ts');
+let source = '';
+if (projectType === 'website') {
+  const publicDir = path.resolve('public');
+  fs.mkdirSync(publicDir, { recursive: true });
+  fs.writeFileSync(
+    path.join(publicDir, 'index.html'),
+    '<!DOCTYPE html><html><body><h1>Hello world!</h1></body></html>\n',
+  );
+  source = `import express from 'express';\nimport path from 'path';\n\nconst app = express();\nconst port = process.env.PORT ?? 3000;\n\napp.use(express.static('public'));\napp.get('/', (_req, res) => {\n  res.sendFile(path.resolve('public/index.html'));\n});\n\nif (import.meta.main) {\n  app.listen(port, () => {\n    console.log(\`Server running on port ${port}\`);\n  });\n}\n\nexport default app;\n`;
+} else {
+  source = `import express from 'express';\n\nconst app = express();\nconst port = process.env.PORT ?? 3000;\n\napp.get('/', (_req, res) => {\n  res.json({ message: 'Hello world!' });\n});\n\nif (import.meta.main) {\n  app.listen(port, () => {\n    console.log(\`Server running on port ${port}\`);\n  });\n}\n\nexport default app;\n`;
+}
+fs.writeFileSync(indexPath, source);
