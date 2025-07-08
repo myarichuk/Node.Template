@@ -1,6 +1,17 @@
 # Node.Template
 
-A simple template for a quick and convenient jumpstart of your project.
+A starter template for quickly bootstrapping a Node.js project.
+
+## Features
+
+- **TypeScript** with strict settings
+- ES module support
+- Fast dependency management with **pnpm**
+- **ESLint** and **Prettier** for consistent code style
+- **Jest** for testing
+- **Husky** and **Commitlint** enforce Conventional Commits and run lint and tests on each commit
+- `customize` script to rename the project and update the license
+- Release workflow powered by **standard-version**
 
 ## Prerequisites
 
@@ -14,11 +25,11 @@ A simple template for a quick and convenient jumpstart of your project.
 - `pnpm dev` - start development mode with automatic reload
 - `pnpm start` - run the compiled application
 - `pnpm build` - compile TypeScript sources to `dist`
-- `pnpm lint` - type-check the project
-- `pnpm test` - run the example test suite
-- `pnpm customize <name> [owner]` - replace template placeholders with `<name>`.
-  If `owner` is provided, the `LICENSE` header will be updated with the
-  specified copyright holder. The year is automatically set to the current one.
+- `pnpm lint` - run ESLint
+- `pnpm test` - run the test suite
+- `pnpm format` - format files with Prettier
+- `pnpm customize <name> [owner]` - replace template placeholders with `<name>`. If `owner` is provided, the `LICENSE` header is updated. The year is automatically set to the current one.
+- `pnpm release` - update the version and `CHANGELOG.md` using commit history
 
 ## Creating a New Project
 
@@ -26,7 +37,7 @@ A simple template for a quick and convenient jumpstart of your project.
    ```bash
    node scripts/check-pnpm.mjs
    ```
-2. Install dependencies:
+2. Install dependencies (this also sets up Husky hooks automatically):
    ```bash
    pnpm install
    ```
