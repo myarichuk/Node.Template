@@ -3,8 +3,9 @@ import fs from 'fs';
 import path from 'path';
 
 const newName = process.argv[2];
+const newOwner = process.argv[3] ?? newName;
 if (!newName) {
-  console.error('Usage: pnpm run customize <new-project-name>');
+  console.error('Usage: pnpm run customize <new-project-name> [owner]');
   process.exit(1);
 }
 
@@ -14,6 +15,18 @@ const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
 pkg.name = newName;
 if (pkg.repository) delete pkg.repository;
 fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+
+// Update LICENSE year and owner
+const licensePath = path.resolve('LICENSE');
+if (fs.existsSync(licensePath)) {
+  const licenseText = fs.readFileSync(licensePath, 'utf8');
+  const year = new Date().getFullYear();
+  const updated = licenseText.replace(
+    /Copyright \(c\) \d{4} .+/,
+    `Copyright (c) ${year} ${newOwner}`,
+  );
+  fs.writeFileSync(licensePath, updated);
+}
 
 // Update README header
 const readmePath = path.resolve('README.md');
