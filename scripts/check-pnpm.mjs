@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// Exits if pnpm is not installed. Install pnpm from https://pnpm.io.
 import { execSync } from 'child_process';
 
 try {
