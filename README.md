@@ -1,6 +1,6 @@
 # Node.Template
 
-A starter template for quickly bootstrapping a Node.js project.
+A starter template for quickly bootstrapping a Node.js **CLI** project.
 
 ## Features
 
@@ -9,6 +9,8 @@ A starter template for quickly bootstrapping a Node.js project.
 - Fast dependency management with **pnpm**
 - **ESLint** and **Prettier** for consistent code style
 - **Jest** for testing
+- **Commander** for command parsing
+- **Ora** and **Figlet** for a pleasant CLI experience
 - **Husky** and **Commitlint** enforce Conventional Commits and run lint and tests on each commit
 - `customize` script to rename the project and update the license
 - Release workflow powered by **standard-version**
@@ -31,6 +33,16 @@ A starter template for quickly bootstrapping a Node.js project.
 - `pnpm format` - format files with Prettier
 - `pnpm customize <name> [owner]` - replace template placeholders with `<name>`. If `owner` is provided, the `LICENSE` header is updated. The year is automatically set to the current one.
 - `pnpm release` - update the version and `CHANGELOG.md` using commit history
+
+## Usage
+
+After building the project you can run the CLI with:
+
+```bash
+pnpm start greet World
+```
+
+Which will display a greeting with a spinner and ASCII art header.
 
 ## Creating a New Project
 
