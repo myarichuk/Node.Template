@@ -27,7 +27,9 @@
   },
   "packageManager": "pnpm@10.12.4",
   "private": true,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "engines": {
     "node": ">=22",
     "pnpm": ">=10"
@@ -36,6 +38,7 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@eslint/eslintrc": "^3.3.1",
+    "@types/figlet": "^1.7.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^24.0.10",
     "@typescript-eslint/eslint-plugin": "^8.36.0",
