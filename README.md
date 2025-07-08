@@ -12,6 +12,9 @@ A starter template for quickly bootstrapping a Node.js project.
 - **Husky** and **Commitlint** enforce Conventional Commits and run lint and tests on each commit
 - `customize` script to rename the project and update the license
 - Release workflow powered by **standard-version**
+- **Express** web server example
+- **tsup** bundler for packaging
+- Dockerfile for container deployments
 
 ## Prerequisites
 
@@ -25,11 +28,13 @@ A starter template for quickly bootstrapping a Node.js project.
 - `pnpm dev` - start development mode with automatic reload
 - `pnpm start` - run the compiled application
 - `pnpm build` - compile TypeScript sources to `dist`
-- `pnpm build:sea` - compile sources and produce a Single Executable Application (SEA)
+- `pnpm bundle` - bundle the application with tsup
+- `pnpm docker:build` - build a Docker image
+- `pnpm docker:run` - run the Docker image locally
 - `pnpm lint` - run ESLint
 - `pnpm test` - run the test suite
 - `pnpm format` - format files with Prettier
-- `pnpm customize <name> [owner]` - replace template placeholders with `<name>`. If `owner` is provided, the `LICENSE` header is updated. The year is automatically set to the current one.
+- `pnpm customize <name> [owner] [type]` - replace template placeholders with `<name>`. If `owner` is provided, the `LICENSE` header is updated. Optionally choose project `type` (`api` or `website`).
 - `pnpm release` - update the version and `CHANGELOG.md` using commit history
 
 ## Creating a New Project
@@ -42,9 +47,9 @@ A starter template for quickly bootstrapping a Node.js project.
    ```bash
    pnpm install
    ```
-3. Run the customize script with your project name and optional owner:
+3. Run the customize script with your project name, owner and project type:
    ```bash
-   pnpm run customize my-new-app "Jane Doe"
+   pnpm run customize my-new-app "Jane Doe" api
    ```
 4. Commit the changes and start coding.
 
