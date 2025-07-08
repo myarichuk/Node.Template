@@ -1,6 +1,6 @@
 # Node.Template
 
-A starter template for quickly bootstrapping a Node.js project.
+A starter template for quickly bootstrapping a Node.js library.
 
 ## Features
 
@@ -12,6 +12,8 @@ A starter template for quickly bootstrapping a Node.js project.
 - **Husky** and **Commitlint** enforce Conventional Commits and run lint and tests on each commit
 - `customize` script to rename the project and update the license
 - Release workflow powered by **standard-version**
+- Bundling handled by **tsup** so the package ships ESM and CJS builds
+- `package` and `deploy` scripts help prepare and publish the library
 
 ## Prerequisites
 
@@ -24,8 +26,9 @@ A starter template for quickly bootstrapping a Node.js project.
 
 - `pnpm dev` - start development mode with automatic reload
 - `pnpm start` - run the compiled application
-- `pnpm build` - compile TypeScript sources to `dist`
-- `pnpm build:sea` - compile sources and produce a Single Executable Application (SEA)
+- `pnpm build` - bundle the library to `dist` using tsup
+- `pnpm package` - create an npm package tarball in the current directory
+- `pnpm deploy` - publish the package to the npm registry
 - `pnpm lint` - run ESLint
 - `pnpm test` - run the test suite
 - `pnpm format` - format files with Prettier
@@ -53,7 +56,7 @@ A starter template for quickly bootstrapping a Node.js project.
 1. Ensure all commits follow Conventional Commits.
 2. Run `pnpm release` to update the version and `CHANGELOG.md` based on commit history.
 3. Push the generated tag and updated files: `git push --follow-tags`.
-4. Publish the package if desired: `pnpm publish`.
+4. Publish the package with `pnpm deploy` when ready.
 
 ## Approving dependency build scripts
 

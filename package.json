@@ -3,19 +3,21 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "start": "tsx src/index.ts",
+    "start": "node ./dist/index.js",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "customize": "node scripts/customize.mjs",
     "release": "standard-version",
     "prepare": "husky install",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "format": "prettier --write .",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsup",
     "preinstall": "node ./scripts/check-pnpm.mjs",
-    "build:sea": "pnpm build && node --experimental-sea-config sea-config.json"
+    "package": "pnpm build && pnpm pack",
+    "deploy": "pnpm build && pnpm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,7 @@
     "ts-jest": "^29.4.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.3",
+    "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   }
 }
