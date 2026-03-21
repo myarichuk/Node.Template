@@ -1,17 +1,19 @@
 # Node.Template
 
-A starter template for quickly bootstrapping a Node.js project.
+A starter template for quickly bootstrapping a Node.js project. It includes standard conventions and tools for open-source development.
 
 ## Features
 
 - **TypeScript** with strict settings
 - ES module support
 - Fast dependency management with **pnpm**
-- **ESLint** and **Prettier** for consistent code style
+- **ESLint** (Flat Config) and **Prettier** for consistent code style
 - **Jest** for testing
 - **Husky** and **Commitlint** enforce Conventional Commits and run lint and tests on each commit
 - `customize` script to rename the project and update the license
 - Release workflow powered by **standard-version**
+- **GitHub Actions** for CI to run tests on PRs
+- **Issue & PR Templates** to follow best practices for OSS development
 
 ## Prerequisites
 
@@ -64,3 +66,7 @@ pnpm approve-builds
 ```
 
 If no packages are listed, the warning can be ignored.
+
+## Contributing
+
+We welcome contributions! Please follow the standard pull request process. Ensure you run tests and linter before pushing changes. Review the open-source templates under `.github/` when filing issues or PRs.
